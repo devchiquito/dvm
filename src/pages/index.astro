@@ -40,16 +40,20 @@
           </linearGradient>
         </defs>
       </svg>
-      <span class="text-white">Bienvenido al</span>
-      <p class="text-white text-3xl sm:text-5xl mt-4 font-bold text-right">
+      <span class="text-white fade">Bienvenido al</span>
+      <p
+        class="text-white text-3xl sm:text-5xl mt-4 font-bold text-right animated animatedFadeInUp fadeInUp"
+      >
         Consultorio Medico del Doctor Victor Morales
       </p>
-      <h1 class="text-zinc-300 mb-5">Consultorio Medico en La Paz Bolivia</h1>
+      <h1 class="text-zinc-300 mb-5 animated animatedFadeInUp fadeInUp">
+        Consultorio Medico en La Paz Bolivia
+      </h1>
       <a
         href="tel:77551023"
         target="_blank"
         rel="noopener noreferrer nofollow"
-        class="text-crema border-2 border-crema rounded-3xl py-2 px-5 text-lg font-bold"
+        class="fade text-crema border-2 border-crema rounded-3xl py-2 px-5 text-lg font-bold"
         >Reservar una Cita</a
       >
     </header>
@@ -190,5 +194,57 @@
   }
   p {
     text-align: center;
+  }
+  svg,
+  .fade {
+    animation: fadeIn 3s;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      transform: translate3d(0, 40px, 0);
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeInUp {
+    from {
+      transform: translate3d(0, 40px, 0);
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+  }
+
+  .animatedFadeInUp {
+    opacity: 0;
+  }
+
+  .fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
   }
 </style>
